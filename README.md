@@ -1,17 +1,17 @@
 百度UEditor
 ===========
-[![Latest Stable Version](https://poser.pugx.org/kucha/ueditor/v/stable)](https://packagist.org/packages/kucha/ueditor) [![Total Downloads](https://poser.pugx.org/kucha/ueditor/downloads)](https://packagist.org/packages/kucha/ueditor) 
+[![Latest Stable Version](https://poser.pugx.org/c4ys/ueditor/v/stable)](https://packagist.org/packages/c4ys/ueditor) [![Total Downloads](https://poser.pugx.org/c4ys/ueditor/downloads)](https://packagist.org/packages/c4ys/ueditor) 
 ### 安装
 Either run
 
 ```
-$ php composer.phar require kucha/ueditor "*"
+$ php composer.phar require c4ys/ueditor "*"
 ```
 
 or add
 
 ```
-"kucha/ueditor": "*"
+"c4ys/ueditor": "*"
 ```
 
 to the ```require``` section of your `composer.json` file.
@@ -25,7 +25,17 @@ public function actions()
 {
     return [
         'upload' => [
-            'class' => 'kucha\ueditor\UEditorAction',
+            'class' => 'c4ys\ueditor\UEditorAction',
+            'config' => [
+                'imageUrlPrefix' => Yii::$app->params['ueditor.upload.url'],
+                'fileUrlPrefix' => Yii::$app->params['ueditor.upload.url'],
+                'videoUrlPrefix' => Yii::$app->params['ueditor.upload.url'],
+                'scrawlUrlPrefix' => Yii::$app->params['ueditor.upload.url'],
+                'imageRoot' => Yii::$app->params['ueditor.upload.path'],
+                'fileRoot' => Yii::$app->params['ueditor.upload.path'],
+                'videoRoot' => Yii::$app->params['ueditor.upload.path'],
+                'scrawlRoot' => Yii::$app->params['ueditor.upload.path'],
+            ],
         ]
     ];
 }
@@ -34,13 +44,13 @@ public function actions()
 view:  
 
 ```
-echo \kucha\ueditor\UEditor::widget([]);
+echo \c4ys\ueditor\UEditor::widget([]);
 ```
 
 或者：
 
 ```
-echo $form->field($model,'colum')->widget('kucha\ueditor\UEditor',[]);
+echo $form->field($model,'colum')->widget('c4ys\ueditor\UEditor',[]);
 ```
 ### 说明
  `ueditor`只支持2种语言，`en-us`和`zh-cn`,默认跟随系统语言 `Yii::$app->language`,可以通过2种方式设置，1.修改系统语言，在`main.php`(高级版) 或者`web.php`(基础版)添加`'language' => 'zh-CN',`。2.实例化的时候配置语言选项，见下边配置
@@ -51,7 +61,7 @@ echo $form->field($model,'colum')->widget('kucha\ueditor\UEditor',[]);
 
 简单实例:  
 ```php
-use \kucha\ueditor\UEditor;
+use \c4ys\ueditor\UEditor;
 echo UEditor::widget([
     'clientOptions' => [
         //编辑区域大小
@@ -73,20 +83,4 @@ echo UEditor::widget([
 ]);
 ```
 
-##### 文件上传相关配置，请在`controller`中配置，参数为`config`,例如文件上传路径等；更多参数请参照 [config.php](https://github.com/BigKuCha/yii2-ueditor-widget/blob/master/config.php) (跟UEditor提供的config.json一样)
-
-简单实例:  
-```php
-public function actions()
-{
-    return [
-        'upload' => [
-            'class' => 'kucha\ueditor\UEditorAction',
-            'config' => [
-                "imageUrlPrefix"  => "http://www.baidu.com",//图片访问路径前缀
-                "imagePathFormat" => "/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}" //上传保存路径
-            ],
-        ]
-    ];
-}
-```
+##### 文件上传相关配置，请在`controller`中配置，参数为`config`,例如文件上传路径等；更多参数请参照 [config.php](https://github.com/c4ys/yii2-ueditor-widget/blob/master/config.php) (跟UEditor提供的config.json一样)

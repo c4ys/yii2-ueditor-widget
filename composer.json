@@ -1,18 +1,18 @@
 {
-    "name": "kucha/ueditor",
-    "description": "desc",
+    "name": "c4ys/ueditor",
+    "description": "UEditor for Yii2, 允许配置上传路径以及上传action",
     "license": "null",
     "authors": [
         {
-            "name": "BigKuCha",
-            "email": "nevermore1989@vip.qq.com"
+            "name": "ning",
+            "email": "15996204@qq.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {},
     "autoload": {
         "psr-4": {
-            "kucha\\ueditor\\": ""
+            "c4ys\\ueditor\\": ""
         }
     }
 }
