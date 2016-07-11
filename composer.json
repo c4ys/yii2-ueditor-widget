@@ -1,7 +1,9 @@
 {
     "name": "c4ys/ueditor",
     "description": "UEditor for Yii2, 允许配置上传路径以及上传action",
-    "license": "null",
+    "keywords": ["yii2", "extension", "widget", "ueditor"],
+    "license": "BSD-3-Clause",
+    "type": "yii2-extension",
     "authors": [
         {
             "name": "ning",
