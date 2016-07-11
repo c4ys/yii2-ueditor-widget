@@ -77,7 +77,8 @@ echo UEditor::widget([
                 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
                 'forecolor', 'backcolor', '|',
                 'lineheight', '|',
-                'indent', '|'
+                'indent', '|',
+                'simpleupload', '|',
             ],
         ]
 ]);
