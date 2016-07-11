@@ -4,6 +4,7 @@
  * @link https://github.com/BigKuCha/yii2-ueditor-widget
  * @link http://ueditor.baidu.com/website/index.html
  */
+
 namespace kucha\ueditor;
 
 use Yii;
@@ -16,9 +17,9 @@ use yii\widgets\InputWidget;
 
 class UEditor extends InputWidget
 {
+
     //配置选项，参阅Ueditor官网文档(定制菜单等)
     public $clientOptions = [];
-
     //默认配置
     protected $_options;
 
@@ -27,14 +28,8 @@ class UEditor extends InputWidget
      */
     public function init()
     {
-        if (isset($this->options['id'])) {
-            $this->id = $this->options['id'];
-        } else {
-            $this->id = $this->hasModel() ? Html::getInputId($this->model,
-                $this->attribute) : $this->id;
-        }
+        $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute) : $this->id;
         $this->_options = [
-            'serverUrl' => Url::to(['upload']),
             'initialFrameWidth' => '100%',
             'initialFrameHeight' => '400',
             'lang' => (strtolower(Yii::$app->language) == 'en-us') ? 'en' : 'zh-cn',
@@ -63,4 +58,5 @@ class UEditor extends InputWidget
         $script = "UE.getEditor('" . $this->id . "', " . $clientOptions . ")";
         $this->view->registerJs($script, View::POS_READY);
     }
+
 }
