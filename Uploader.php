@@ -1,6 +1,6 @@
 <?php
 
-namespace kucha\ueditor;
+namespace c4ys\ueditor;
 
 class Uploader
 {

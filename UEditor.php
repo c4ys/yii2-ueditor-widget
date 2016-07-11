@@ -5,7 +5,7 @@
  * @link http://ueditor.baidu.com/website/index.html
  */
 
-namespace kucha\ueditor;
+namespace c4ys\ueditor;
 
 use Yii;
 use yii\helpers\ArrayHelper;

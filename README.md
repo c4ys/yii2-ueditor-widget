@@ -1,6 +1,8 @@
 百度UEditor
 ===========
-[![Latest Stable Version](https://poser.pugx.org/c4ys/ueditor/v/stable)](https://packagist.org/packages/c4ys/ueditor) [![Total Downloads](https://poser.pugx.org/c4ys/ueditor/downloads)](https://packagist.org/packages/c4ys/ueditor) 
+
+
+
 ### 安装
 Either run
 

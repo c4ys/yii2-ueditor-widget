@@ -1,5 +1,5 @@
 <?php
-namespace kucha\ueditor;
+namespace c4ys\ueditor;
 
 use Yii;
 use yii\base\Action;
